@@ -1,0 +1,40 @@
+python manage.py migrate
+python manage.py runserver
+python manage.py createsuperuser
+python manage.py startapp article
+python manage.py makemigration
+
+python manage.py shell //django orm yapısı
+	from django.contrib.auth.models import User
+	from article.models import Article
+	newUser = User(username = "denemekullanici",password="2589653") //şifrelenmemiş password
+	newUser.save()
+	
+	newUser.set_password("2589653") //şifrelenmiş password
+	newUser.save()
+
+
+python manage.py startapp user //user uygulaması ekleniyor
+
+Dokuman:
+https://docs.djangoproject.com/en/2.0/ref/contrib/admin/
+
+
+
+
+
+…or create a new repository on the command line
+
+echo "# blog" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/leventercan76/blog.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/leventercan76/blog.git
+git branch -M main
+git push -u origin main
+

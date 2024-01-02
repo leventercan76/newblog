@@ -6,6 +6,13 @@
     <p>Bu blogta yazılarınız yayınlanacak</p>
 </div>
 
+<p>
+    {% if request.user.is_authenticated %}
+        Giriş Yapılmış, {{ request.user.username }}
+    {% else %}
+        Giriş Yapılmamış
+    {% endif %}
+
 <ul>
 {% for number in numbers %} 
     

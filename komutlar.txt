@@ -20,8 +20,11 @@ Dokuman:
 https://docs.djangoproject.com/en/2.0/ref/contrib/admin/
 
 
+pip install django-crispy-forms
+pip install crispy-bootstrap4
+pip install django-ckeditor
 
-
+python manage.py collectstatic
 
 …or create a new repository on the command line
 
@@ -37,4 +40,7 @@ git push -u origin main
 git remote add origin https://github.com/leventercan76/blog.git
 git branch -M main
 git push -u origin main
+
+
+
 

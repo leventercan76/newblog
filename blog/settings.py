@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     "article",
     "user",
     "crispy_forms",
-    "crispy_bootstrap4"
+    "crispy_bootstrap4",
+    "ckeditor"
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,13 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # crispy form seçimi
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #static root ekleme
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+        "allowedContent" : True,
+        "width" : "100%",
+    }
+}

@@ -8,6 +8,7 @@ class Article(models.Model):
     # content = models.TextField(verbose_name="İçerik")
     content = RichTextField(verbose_name="İçerik")
     created_date = models.DateField(auto_now_add=True,verbose_name="Oluşturulma Tarihi")
+    article_image = models.FileField(blank=True,null=True,verbose_name="Makale Fotoğrafı")
     def __str__(self):
         return self.titles
     

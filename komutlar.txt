@@ -23,6 +23,9 @@ https://docs.djangoproject.com/en/2.0/ref/contrib/admin/
 pip install django-crispy-forms
 pip install crispy-bootstrap4
 pip install django-ckeditor
+pip install django-cleanup
+
+python manage.py makemigrations //eğer modeller değişirse ilgili veritabanlarının tekrar modellenmesi için bu gereklidir.
 
 python manage.py collectstatic
 

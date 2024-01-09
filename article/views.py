@@ -4,9 +4,10 @@ from django.contrib import messages
 from .models import Article
 
 # Create your views here.
-context = {"numbers" : [1,2,3,4,5,6] }
+
+#context = {"numbers" : [1,2,3,4,5,6] }
 def index(request):
-    return render(request,"index.html",context)
+    return render(request,"index.html")#,context)
 
 def about(request):
     return render(request,"about.html")
@@ -17,6 +18,7 @@ def dashboard(request):
         "articles":articles
     }
     return render(request,"dashboard.html",context)
+
 
 
 def addArticle(request):
@@ -36,5 +38,22 @@ def detail(request,id):
     article = get_object_or_404(Article,id = id)
     return render(request,"detail.html",{"article":article})
 
-def update(request,id):
-    pass
+def updateArticle(request,id):
+    article = get_object_or_404(Article,id = id)
+    form = ArticleForm(request.POST or None,request.FILES or None,instance = article)
+
+    if form.is_valid():
+        article = form.save(commit=False)
+        article.author = request.user
+        article.save()
+
+        messages.success(request,"Makale güncelleme başarılı")
+        return redirect("article:dashboard")
+    
+    return render(request,"update.html",{"form":form})
+
+def deleteArticle(request,id):
+    article = get_object_or_404(Article,id = id)
+    article.delete()
+    messages.success(request,"Makale {0} silindi".format(id))
+    return redirect("article:dashboard")

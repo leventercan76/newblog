@@ -64,6 +64,10 @@ def deleteArticle(request,id):
 
 
 def articles(request):
-    articles = Article.objects.all()
+    keyword = request.GET.get("aramaKeyword")
+    if keyword:
+      articles = Article.objects.filter(titles__contains = keyword )  
+    else:
+        articles = Article.objects.all()
     return render(request,"articles.html",{"articles":articles})
     

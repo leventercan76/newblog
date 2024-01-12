@@ -19,6 +19,12 @@ python manage.py startapp user //user uygulaması ekleniyor
 Dokuman:
 https://docs.djangoproject.com/en/2.0/ref/contrib/admin/
 
+Code Prettify Dokumanı
+https://github.com/googlearchive/code-prettify
+
+Tag Dokumanı
+https://docs.djangoproject.com/en/4.2/ref/templates/builtins/
+
 
 pip install django-crispy-forms
 pip install crispy-bootstrap4

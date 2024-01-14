@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     "article",
     "user",
     "crispy_forms",
-    "crispy_bootstrap4"
+    "crispy_bootstrap4",
+    "ckeditor",
+    'django_cleanup.apps.CleanupConfig', #imaj cleanup için gerekli
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media", # file upload için gerekli imajı proses etmesi için
             ],
         },
     },
@@ -122,7 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -134,3 +138,16 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # crispy form seçimi
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") #static root ekleme
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+        "allowedContent" : True,
+        "width" : "100%",
+    }
+}
+
+MEDIA_URL = "/media/" #uplad edilen dosya ve resimlerim saklanacağı yer.
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")

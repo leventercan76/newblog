@@ -19,9 +19,21 @@ python manage.py startapp user //user uygulaması ekleniyor
 Dokuman:
 https://docs.djangoproject.com/en/2.0/ref/contrib/admin/
 
+Code Prettify Dokumanı
+https://github.com/googlearchive/code-prettify
+
+Tag Dokumanı
+https://docs.djangoproject.com/en/4.2/ref/templates/builtins/
 
 
+pip install django-crispy-forms
+pip install crispy-bootstrap4
+pip install django-ckeditor
+pip install django-cleanup
 
+python manage.py makemigrations //eğer modeller değişirse ilgili veritabanlarının tekrar modellenmesi için bu gereklidir.
+
+python manage.py collectstatic
 
 …or create a new repository on the command line
 
@@ -37,4 +49,7 @@ git push -u origin main
 git remote add origin https://github.com/leventercan76/blog.git
 git branch -M main
 git push -u origin main
+
+
+
 

@@ -32,23 +32,11 @@ pip install django-ckeditor
 pip install django-cleanup
 
 python manage.py makemigrations //eğer modeller değişirse ilgili veritabanlarının tekrar modellenmesi için bu gereklidir.
+python manage.py migrate
 
 python manage.py collectstatic
 
-…or create a new repository on the command line
 
-echo "# blog" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/leventercan76/blog.git
-git push -u origin main
-
-…or push an existing repository from the command line
-git remote add origin https://github.com/leventercan76/blog.git
-git branch -M main
-git push -u origin main
 
 
 

@@ -17,3 +17,7 @@ class Comment(models.Model):
     comment_author = models.CharField(max_length=50,verbose_name="İsim")
     comment_content = models.CharField(max_length=200,verbose_name="Yorum")
     comment_date = models.DateField(auto_now_add=True,verbose_name="Yorum Tarihi")
+    def __str__(self):
+        return self.comment_content
+    class Meta: #Sıralama için meta classı gerekiyor
+        ordering = ['-comment_date']
